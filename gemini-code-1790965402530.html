@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 Kasım Öğretmenler Günü - Buca Mehmet Akif Ersoy SBL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1b365d 0%, #2c5282 100%);
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.1rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* TAB / SAYFA GEÇİŞ MENÜSÜ */
+        nav {
+            background-color: #0d1b2a;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-tab {
+            color: #e2e8f0;
+            padding: 16px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-tab:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+        }
+
+        .nav-tab.active {
+            color: #63b3ed;
+            border-bottom: 4px solid #63b3ed;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        /* SAYFA İÇERİK ALANLARI (TABLAR) */
+        .page-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .school-image {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #1b365d;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .quote {
+            font-style: italic;
+            background: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* Form Elemanları */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: #3182ce;
+        }
+
+        .btn {
+            background-color: #1b365d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2c5282;
+        }
+
+        .btn-secondary {
+            background-color: #319795;
+        }
+        .btn-secondary:hover {
+            background-color: #2c7a7b;
+        }
+
+        /* Özel Not Kartı Tasarımı */
+        .note-card {
+            background: #fff5f5;
+            border: 2px dashed #feb2b2;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        /* AI / Gemini Köşesi */
+        .ai-box {
+            background: #f0f4fe;
+            border: 1px solid #c3dafe;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .ai-title {
+            color: #2b6cb0;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ARAMA VE FİLTRELEME ALANI */
+        .search-box {
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        /* Mesaj/Not Listesi */
+        .message-list {
+            margin-top: 15px;
+        }
+
+        .note-item {
+            background: #ffffff;
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+            border-left: 5px solid #e53e3e;
+        }
+
+        .note-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #2c5282;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 6px;
+        }
+
+        .note-badge {
+            background: #edf2f7;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #4a5568;
+            font-weight: normal;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1b365d;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>24 Kasım Öğretmenler Günü</h1>
+        <p>Buca Mehmet Akif Ersoy Sosyal Bilimler Lisesi Özel Platformu</p>
+    </header>
+
+    <!-- TAB / MENÜ GEÇİŞLERİ -->
+    <nav>
+        <div class="nav-tab active" onclick="switchTab('anasayfa')">🏫 Ana Sayfa</div>
+        <div class="nav-tab" onclick="switchTab('not-gonder')">💌 Not Gönder</div>
+        <div class="nav-tab" onclick="switchTab('ai-asistan')">🤖 AI Asistanı</div>
+        <div class="nav-tab" onclick="switchTab('pano')">📌 Okul Panosu & Arama</div>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. SAYFA: ANA SAYFA -->
+        <div id="page-anasayfa" class="page-content active">
+            <div class="section">
+                <img class="school-image" src="http://googleusercontent.com/image_collection/image_retrieval/997567061592886022" alt="Buca Mehmet Akif Ersoy Sosyal Bilimler Lisesi">
+                <h2>Buca Mehmet Akif Ersoy Sosyal Bilimler Lisesi</h2>
+                <p>Sosyal bilimlerin ışığında geleceğe yön veren, düşünmeyi ve araştırmayı ilke edinen okulumuzun tüm değerli öğretmenlerinin Öğretmenler Günü'nü sevgi ve saygıyla kutluyoruz.</p>
+                <div class="quote">
+                    "Milletleri kurtaranlar yalnız ve ancak öğretmenlerdir." <br><strong>- Mustafa Kemal Atatürk</strong>
+                </div>
+                <p style="margin-top: 15px;">Üst menüyü kullanarak değerli öğretmenlerimize kutlama notu gönderebilir veya panoda yayınlanan diğer mesajları inceleyebilirsiniz.</p>
+            </div>
+        </div>
+
+        <!-- 2. SAYFA: ÖĞRETMENE NOT GÖNDER -->
+        <div id="page-not-gonder" class="page-content">
+            <div class="section">
+                <h2>💌 Öğretmenine Özel Teşekkür / Kutlama Notu Gönder</h2>
+                <p style="margin-bottom: 20px; color: #4a5568;">Aşağıdaki formu doldurarak istediğin öğretmenine özel bir kutlama notu yazabilirsin. Notun anında Dijital Okul Panosu'nda yayınlanacaktır!</p>
+
+                <div class="note-card">
+                    <form id="noteForm" onsubmit="sendNote(event)">
+                        <div class="form-group">
+                            <label for="studentInfo">Adınız / Sınıfınız (İsteğe Bağlı):</label>
+                            <input type="text" id="studentInfo" placeholder="Örn: Zeynep - 11/A (İsterseniz 'Bir Öğrenciniz' yazabilirsiniz)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="teacherSelect">Not Gönderilecek Öğretmen / Branş:</label>
+                            <select id="teacherSelect" required>
+                                <option value="">-- Öğretmen veya Branş Seçiniz --</option>
+                                <option value="Tüm Öğretmenlerimiz">Tüm Buca SBL Öğretmenleri</option>
+                                <option value="Edebiyat Zümresi">Edebiyat Öğretmenlerimiz</option>
+                                <option value="Tarih Zümresi">Tarih Öğretmenlerimiz</option>
+                                <option value="Felsefe Zümresi">Felsefe Öğretmenlerimiz</option>
+                                <option value="Coğrafya Zümresi">Coğrafya Öğretmenlerimiz</option>
+                                <option value="Matematik Zümresi">Matematik Öğretmenlerimiz</option>
+                                <option value="Yabancı Dil Zümresi">Yabancı Dil Öğretmenlerimiz</option>
+                                <option value="Okul Yönetimi">Okul Yönetimi & Rehberlik</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="noteText">Kutlama Notunuz:</label>
+                            <textarea id="noteText" rows="5" required placeholder="Öğretmeninize iletmek istediğiniz güzel dilekleri veya anılarınızı buraya yazın..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">Notu Panoya İlet ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SAYFA: AI NOT ASİSTANI -->
+        <div id="page-ai-asistan" class="page-content">
+            <div class="section">
+                <h2>🤖 Ne Yazacağını Bulamadın mı? Gemini Sana Not Hazırlasın!</h2>
+                <p>Hangi dersin öğretmenine veya zümreye not yazmak istiyorsan seç, senin için anlamlı bir kutlama mesajı oluşturalım:</p>
+                
+                <div style="margin-top: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                    <select id="aiTeacherType" style="padding: 12px; border-radius: 8px; flex: 1; min-width: 220px; border: 1px solid #cbd5e0;">
+                        <option value="Edebiyat">Edebiyat Öğretmeni İçin</option>
+                        <option value="Tarih">Tarih Öğretmeni İçin</option>
+                        <option value="Felsefe">Felsefe Öğretmeni İçin</option>
+                        <option value="Matematik">Matematik Öğretmeni İçin</option>
+                        <option value="Genel">Genel Teşekkür Notu</option>
+                    </select>
+                    <button class="btn btn-secondary" onclick="generateNoteWithAI()">Not Önerisi Üret ✨</button>
+                </div>
+
+                <div class="ai-box" id="aiOutput" style="display: none;">
+                    <div class="ai-title">🤖 Gemini'ın Senin İçin Yazdığı Not:</div>
+                    <p id="aiNoteText" style="font-style: italic; color: #2d3748; font-size: 1.05rem; line-height: 1.7;"></p>
+                    <button class="btn" onclick="copyAIToForm()" style="margin-top: 15px; padding: 8px 16px; font-size: 0.9rem;">Bu Notu Forma Aktar ve Gönder 📋</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. SAYFA: OKUL PANOSU VE ARAMA SİSTEMİ -->
+        <div id="page-pano" class="page-content">
+            <div class="section">
+                <h2>📌 Öğretmenler Günü Dijital Panosu & Mesaj Arama</h2>
+                <p style="margin-bottom: 15px;">Öğrenciler tarafından paylaşılan tüm kutlama notları burada listelenir. Öğretmen, zümre veya isim arayabilirsiniz:</p>
+
+                <!-- Arama Kutusu -->
+                <div class="search-box">
+                    <input type="text" id="searchInput" onkeyup="filterNotes()" placeholder="🔍 Öğretmen zümresi, isim veya not içinde ara...">
+                </div>
+
+                <div class="message-list" id="boardList">
+                    <div class="note-item">
+                        <div class="note-header">
+                            <span>Alıcı: Tüm Buca SBL Öğretmenleri</span>
+                            <span class="note-badge">Gönderen: 12/C Sınıfı</span>
+                        </div>
+                        <p>Bizlere sadece dersi değil, hayatı ve sorgulamayı öğreten tüm hocalarımızın Öğretmenler Günü kutlu olsun!</p>
+                    </div>
+
+                    <div class="note-item">
+                        <div class="note-header">
+                            <span>Alıcı: Edebiyat Zümresi</span>
+                            <span class="note-badge">Gönderen: Ahmet (10/B)</span>
+                        </div>
+                        <p>Şiirleri ve edebiyatı bize sevdirdiğiniz, kelimelerin gücünü öğrettiğiniz için teşekkür ederiz hocalarım.</p>
+                    </div>
+
+                    <div class="note-item">
+                        <div class="note-header">
+                            <span>Alıcı: Tarih Zümresi</span>
+                            <span class="note-badge">Gönderen: Elif (11/A)</span>
+                        </div>
+                        <p>Geçmişin ışığında geleceğe emin adımlarla yürümemizi sağlayan değerli Tarih öğretmenlerimize saygıyla...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Buca Mehmet Akif Ersoy Sosyal Bilimler Lisesi & Gemini AI - Öğretmenler Günü Özel Platformu</p>
+    </footer>
+
+    <script>
+        // Sayfalar (Tablar) Arası Geçiş Fonksiyonu
+        function switchTab(tabId) {
+            // Tüm içerikleri gizle
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Tüm nav tablarının aktifliğini kaldır
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // İstenen sayfayı ve tabı aktif yap
+            document.getElementById('page-' + tabId).classList.add('active');
+            
+            // Tıklanan tab butonuna active class'ı ekle
+            const activeNavIndex = ['anasayfa', 'not-gonder', 'ai-asistan', 'pano'].indexOf(tabId);
+            if (activeNavIndex !== -1) {
+                tabs[activeNavIndex].classList.add('active');
+            }
+
+            // Sayfayı yukarı kaydır
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // AI ile Not Üretme
+        function generateNoteWithAI() {
+            const type = document.getElementById('aiTeacherType').value;
+            const outputBox = document.getElementById('aiOutput');
+            const outputText = document.getElementById('aiNoteText');
+
+            const notes = {
+                'Edebiyat': 'Kelamın zarafetiyle ufkumuzu açan, her dizede bize yeni dünyalar tanıtan kıymetli Edebiyat öğretmenim; Öğretmenler Gününüz kutlu olsun!',
+                'Tarih': 'Geçmişin ışığında geleceğe emin adımlarla yürümemizi sağlayan, tarihi bize sevdiren değerli öğretmenim; Gününüz kutlu olsun!',
+                'Felsefe': 'Düşünmeyi, sorgulamayı ve bakış açımızı zenginleştirmeyi öğreten çok değerli Felsefe öğretmenim; sabrınız ve emeğiniz için teşekkürler!',
+                'Matematik': 'Hayatın karmaşık denklemlerinde bize rehberlik eden, her problemin bir çözümü olduğunu öğreten kıymetli öğretmenim; Öğretmenler Gününüz kutlu olsun!',
+                'Genel': 'Sosyal bilimlerin ışığında bizlere kattığınız her bir değer için sonsuz teşekkürler. Emeğiniz ödenmez!'
+            };
+
+            outputText.innerText = notes[type];
+            outputBox.style.display = 'block';
+        }
+
+        // AI Notunu Forma Kopyalama ve Not Gönder Sayfasına Geçme
+        function copyAIToForm() {
+            const generatedText = document.getElementById('aiNoteText').innerText;
+            document.getElementById('noteText').value = generatedText;
+            switchTab('not-gonder');
+        }
+
+        // Notu Panoya Ekleme
+        function sendNote(event) {
+            event.preventDefault();
+            
+            let student = document.getElementById('studentInfo').value.trim();
+            if(!student) student = "Bir Öğrenciniz";
+            
+            const teacher = document.getElementById('teacherSelect').value;
+            const text = document.getElementById('noteText').value;
+
+            const board = document.getElementById('boardList');
+            const newNote = document.createElement('div');
+            newNote.className = 'note-item';
+            newNote.innerHTML = `
+                <div class="note-header">
+                    <span>Alıcı: ${teacher}</span>
+                    <span class="note-badge">Gönderen: ${student}</span>
+                </div>
+                <p>${text}</p>
+            `;
+
+            board.prepend(newNote);
+
+            document.getElementById('noteForm').reset();
+            alert('Kutlama notunuz başarıyla panoya eklendi!');
+            
+            // Notu ekledikten sonra Pano alanına yönlendir
+            switchTab('pano');
+        }
+
+        // Panoda Canlı Not Arama / Filtreleme
+        function filterNotes() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const noteItems = document.getElementsByClassName('note-item');
+
+            for (let i = 0; i < noteItems.length; i++) {
+                const text = noteItems[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    noteItems[i].style.display = "";
+                } else {
+                    noteItems[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
