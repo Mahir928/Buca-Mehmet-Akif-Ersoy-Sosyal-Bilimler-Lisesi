@@ -13,496 +13,108 @@
             --navy-3: #1b365d;
             --blue: #2c5282;
             --sky: #63b3ed;
-            --sky-soft: #dfeeff;
             --gold: #d4af37;
-            --gold-soft: #fff4c9;
             --bg: #f4f7fb;
             --card: rgba(255,255,255,0.9);
             --text: #1d2a39;
             --muted: #5f6f86;
             --line: rgba(148, 163, 184, 0.35);
             --danger: #d94a4a;
-            --green: #2d9c7a;
             --shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
             --radius: 24px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html { scroll-behavior: smooth; }
-
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        html { scroll-behavior:smooth; }
         body {
-            background:
-                radial-gradient(circle at top left, rgba(99, 179, 237, 0.12), transparent 18%),
-                radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.08), transparent 25%),
-                linear-gradient(180deg, #edf4fb 0%, #f9fafc 45%, #f3f5f8 100%);
-            color: var(--text);
-            line-height: 1.7;
+            background: radial-gradient(circle at top left, rgba(99, 179, 237, 0.12), transparent 18%),
+                        radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.08), transparent 25%),
+                        linear-gradient(180deg, #edf4fb 0%, #f9fafc 45%, #f3f5f8 100%);
+            color: var(--text); line-height: 1.7;
         }
-
-        img { max-width: 100%; display: block; }
-        a { text-decoration: none; }
-
+        img { max-width:100%; display:block; }
+        a { text-decoration:none; }
         .topbar {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 55%, var(--blue) 100%);
-            color: white;
-            padding: 36px 18px 28px;
-            box-shadow: 0 12px 35px rgba(15,23,42,0.18);
+            position:relative; overflow:hidden; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 55%, var(--blue) 100%);
+            color:#fff; padding:36px 18px 28px; box-shadow:0 12px 35px rgba(15,23,42,0.18);
         }
-
         .topbar::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, rgba(255,255,255,0.12), transparent 45%, rgba(255,255,255,0.08));
-            pointer-events: none;
+            content:""; position:absolute; inset:0; background:linear-gradient(120deg, rgba(255,255,255,0.12), transparent 45%, rgba(255,255,255,0.08));
+            pointer-events:none;
         }
-
         .topbar-inner {
-            position: relative;
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 18px;
-            flex-wrap: wrap;
+            position:relative; max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap;
         }
-
-        .brand-block {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
+        .brand-block { display:flex; align-items:center; gap:16px; }
         .brand-mark {
-            width: 58px;
-            height: 58px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(99,179,237,0.22));
-            border: 1px solid rgba(255,255,255,0.2);
-            display: grid;
-            place-items: center;
-            font-size: 1.7rem;
+            width:58px; height:58px; border-radius:18px; background:linear-gradient(135deg, rgba(255,255,255,0.18), rgba(99,179,237,0.22));
+            border:1px solid rgba(255,255,255,0.2); display:grid; place-items:center; font-size:1.7rem;
         }
-
-        .brand-text h1 {
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
-            line-height: 1.1;
-            font-weight: 800;
-            letter-spacing: 0.3px;
-        }
-
-        .brand-text p {
-            font-size: 0.96rem;
-            opacity: 0.9;
-        }
-
-        .premium-badge {
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 999px;
-            padding: 10px 16px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
+        .brand-text h1 { font-size:clamp(1.8rem,3vw,2.8rem); line-height:1.1; font-weight:800; letter-spacing:0.3px; }
+        .brand-text p { font-size:0.96rem; opacity:0.9; }
+        .premium-badge { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:10px 16px; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; }
         nav {
-            background: rgba(15, 23, 42, 0.97);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 10px 28px rgba(15,23,42,0.14);
-            border-bottom: 1px solid rgba(148,163,184,0.16);
-            backdrop-filter: blur(8px);
+            background:rgba(15, 23, 42, 0.97); display:flex; justify-content:center; flex-wrap:wrap; position:sticky; top:0; z-index:100;
+            box-shadow:0 10px 28px rgba(15,23,42,0.14); border-bottom:1px solid rgba(148,163,184,0.16); backdrop-filter:blur(8px);
         }
-
-        .nav-tab {
-            border: none;
-            background: transparent;
-            color: #e7edf8;
-            padding: 16px 22px;
-            font-size: 0.94rem;
-            font-weight: 700;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.25s ease;
-        }
-
-        .nav-tab:hover,
-        .nav-tab:focus-visible {
-            background: rgba(255,255,255,0.04);
-            color: white;
-            outline: none;
-        }
-
-        .nav-tab.active {
-            color: #dfefff;
-        }
-
+        .nav-tab { border:none; background:transparent; color:#e7edf8; padding:16px 22px; font-size:0.94rem; font-weight:700; cursor:pointer; position:relative; transition:all 0.25s ease; }
+        .nav-tab:hover, .nav-tab:focus-visible { background:rgba(255,255,255,0.04); color:#fff; outline:none; }
+        .nav-tab.active { color:#dfefff; }
         .nav-tab.active::after {
-            content: "";
-            position: absolute;
-            left: 18px;
-            right: 18px;
-            bottom: 0;
-            height: 4px;
-            border-radius: 10px 10px 0 0;
-            background: linear-gradient(90deg, var(--sky), #9ed9ff);
+            content:""; position:absolute; left:18px; right:18px; bottom:0; height:4px; border-radius:10px 10px 0 0;
+            background:linear-gradient(90deg, var(--sky), #9ed9ff);
         }
-
-        .container {
-            max-width: 1100px;
-            margin: 30px auto 40px;
-            padding: 0 18px;
-        }
-
-        .page-content {
-            display: none;
-            animation: fadeIn 0.38s ease;
-        }
-
-        .page-content.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        .container { max-width:1100px; margin:30px auto 40px; padding:0 18px; }
+        .page-content { display:none; animation: fadeIn 0.38s ease; }
+        .page-content.active { display:block; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
         .section {
-            background: var(--card);
-            border: 1px solid rgba(148,163,184,0.18);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: clamp(22px, 2vw, 32px);
-            margin-bottom: 26px;
-            overflow: hidden;
+            background: var(--card); border:1px solid rgba(148,163,184,0.18); border-radius:var(--radius); box-shadow:var(--shadow); padding:clamp(22px, 2vw, 32px); margin-bottom:26px; overflow:hidden;
         }
-
-        .hero-card {
-            padding: 0;
-            border-radius: calc(var(--radius) + 2px);
-        }
-
-        .hero-image-wrap {
-            position: relative;
-            overflow: hidden;
-            min-height: 430px;
-        }
-
-        .school-image {
-            width: 100%;
-            min-height: 430px;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(1.08) contrast(1.03);
-        }
-
+        .hero-card { padding:0; border-radius:calc(var(--radius) + 2px); }
+        .hero-image-wrap { position:relative; overflow:hidden; min-height:430px; }
+        .school-image { width:100%; min-height:430px; height:100%; object-fit:cover; filter:saturate(1.08) contrast(1.03); }
         .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(15,23,42,0.1), rgba(15,23,42,0.72));
-            display: flex;
-            align-items: end;
-            padding: 28px;
+            position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,23,42,0.1), rgba(15,23,42,0.72));
+            display:flex; align-items:end; padding:28px;
         }
-
-        .hero-content {
-            max-width: 640px;
-            color: white;
+        .hero-content { max-width:640px; color:#fff; }
+        .eyebrow { display:inline-flex; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:7px 13px; font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; margin-bottom:12px; }
+        .hero-content h2 { font-size:clamp(2rem,4vw,3.1rem); line-height:1.08; margin-bottom:10px; color:#fff; border:none; padding:0; }
+        .hero-content p { font-size:1.06rem; color:rgba(255,255,255,0.92); max-width:55ch; }
+        h2 { color:var(--navy-3); margin-bottom:18px; border-bottom:2px solid rgba(148,163,184,0.25); padding-bottom:10px; font-size:clamp(1.45rem,2vw,2rem); }
+        .intro-grid { display:grid; grid-template-columns:1.4fr 0.95fr; gap:26px; align-items:start; }
+        .quote { background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(255,255,255,0.9)); border-left:5px solid var(--gold); border-radius:18px; padding:20px 18px; font-style:italic; font-size:1.04rem; color:var(--navy-2); box-shadow:inset 0 0 0 1px rgba(212,175,55,0.2); }
+        .quote strong { display:block; margin-top:8px; font-style:normal; color:var(--navy-3); }
+        .info-list { list-style:none; display:grid; gap:12px; }
+        .info-list li { display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.8); border:1px solid rgba(148,163,184,0.2); border-radius:14px; padding:12px 14px; color:var(--text); font-weight:600; }
+        .icon { width:36px; height:36px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(99,179,237,0.16), rgba(44,82,130,0.12)); font-size:1.15rem; }
+        .note-card { background:linear-gradient(180deg, #fff7f7 0%, #fffdfd 100%); border:1px dashed rgba(217,74,74,0.35); border-radius:18px; padding:24px; }
+        .form-group { margin-bottom:18px; }
+        .form-group label { display:block; margin-bottom:7px; color:var(--navy-2); font-weight:700; }
+        .form-group input, .form-group textarea, .form-group select {
+            width:100%; border:1px solid rgba(148,163,184,0.42); background:rgba(255,255,255,0.86); border-radius:12px; padding:13px 14px; font-size:1rem; color:var(--text); transition:all 0.2s ease;
         }
-
-        .eyebrow {
-            display: inline-flex;
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 999px;
-            padding: 7px 13px;
-            font-size: 0.74rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .hero-content h2 {
-            font-size: clamp(2rem, 4vw, 3.1rem);
-            line-height: 1.08;
-            margin-bottom: 10px;
-            color: white;
-            border: none;
-            padding: 0;
-        }
-
-        .hero-content p {
-            font-size: 1.06rem;
-            color: rgba(255,255,255,0.92);
-            max-width: 55ch;
-        }
-
-        h2 {
-            color: var(--navy-3);
-            margin-bottom: 18px;
-            border-bottom: 2px solid rgba(148,163,184,0.25);
-            padding-bottom: 10px;
-            font-size: clamp(1.45rem, 2vw, 2rem);
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 0.95fr;
-            gap: 26px;
-            align-items: start;
-        }
-
-        .quote {
-            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(255,255,255,0.9));
-            border-left: 5px solid var(--gold);
-            border-radius: 18px;
-            padding: 20px 18px;
-            font-style: italic;
-            font-size: 1.04rem;
-            color: var(--navy-2);
-            box-shadow: inset 0 0 0 1px rgba(212,175,55,0.2);
-        }
-
-        .quote strong {
-            display: block;
-            margin-top: 8px;
-            font-style: normal;
-            color: var(--navy-3);
-        }
-
-        .info-list {
-            list-style: none;
-            display: grid;
-            gap: 12px;
-        }
-
-        .info-list li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.8);
-            border: 1px solid rgba(148,163,184,0.2);
-            border-radius: 14px;
-            padding: 12px 14px;
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 12px;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, rgba(99,179,237,0.16), rgba(44,82,130,0.12));
-            font-size: 1.15rem;
-        }
-
-        .note-card {
-            background: linear-gradient(180deg, #fff7f7 0%, #fffdfd 100%);
-            border: 1px dashed rgba(217,74,74,0.35);
-            border-radius: 18px;
-            padding: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-            color: var(--navy-2);
-            font-weight: 700;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            border: 1px solid rgba(148,163,184,0.42);
-            background: rgba(255,255,255,0.86);
-            border-radius: 12px;
-            padding: 13px 14px;
-            font-size: 1rem;
-            color: var(--text);
-            transition: all 0.2s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--sky);
-            box-shadow: 0 0 0 4px rgba(99,179,237,0.12);
-            outline: none;
-        }
-
-        textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:var(--sky); box-shadow:0 0 0 4px rgba(99,179,237,0.12); outline:none; }
+        textarea { min-height:140px; resize:vertical; }
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            border: none;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--navy-3), var(--blue));
-            color: white;
-            padding: 13px 22px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 12px 26px rgba(27,54,93,0.22);
+            display:inline-flex; align-items:center; justify-content:center; gap:8px; border:none; border-radius:12px; background:linear-gradient(135deg, var(--navy-3), var(--blue));
+            color:#fff; padding:13px 22px; font-size:1rem; font-weight:700; cursor:pointer; transition:transform 0.2s ease, box-shadow 0.2s ease; box-shadow:0 12px 26px rgba(27,54,93,0.22);
         }
-
-        .btn:hover,
-        .btn:focus-visible {
-            transform: translateY(-1px);
-            box-shadow: 0 14px 30px rgba(27,54,93,0.25);
-            outline: none;
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #2db7a1, #268e85);
-            box-shadow: 0 12px 26px rgba(38,142,133,0.24);
-        }
-
-        .ai-box {
-            background: linear-gradient(135deg, rgba(100,170,255,0.08), rgba(31,110,182,0.06));
-            border: 1px solid rgba(99,179,237,0.28);
-            border-radius: 18px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .ai-title {
-            color: var(--navy-3);
-            font-weight: 800;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .search-box {
-            background: rgba(238,243,249,0.9);
-            border: 1px solid rgba(148,163,184,0.22);
-            border-radius: 16px;
-            padding: 14px;
-            display: flex;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .search-box input {
-            flex: 1;
-            border: 1px solid rgba(148,163,184,0.4);
-            border-radius: 12px;
-            padding: 12px 14px;
-            font-size: 0.96rem;
-            background: white;
-        }
-
-        .message-list {
-            display: grid;
-            gap: 16px;
-        }
-
-        .note-item {
-            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,249,255,0.98));
-            border: 1px solid rgba(148,163,184,0.2);
-            border-left: 6px solid var(--danger);
-            border-radius: 16px;
-            padding: 18px 18px 14px;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
-        }
-
-        .note-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid rgba(148,163,184,0.25);
-            padding-bottom: 8px;
-            margin-bottom: 10px;
-            color: var(--navy-3);
-            font-weight: 800;
-        }
-
-        .note-badge {
-            background: rgba(99,179,237,0.12);
-            color: var(--navy-2);
-            border: 1px solid rgba(99,179,237,0.2);
-            border-radius: 999px;
-            font-weight: 600;
-            padding: 5px 10px;
-            font-size: 0.8rem;
-        }
-
-        .empty-state {
-            display: none;
-            background: rgba(245,247,251,0.9);
-            border: 1px dashed rgba(148,163,184,0.35);
-            border-radius: 14px;
-            color: var(--muted);
-            margin-top: 14px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
-            color: rgba(255,255,255,0.9);
-            text-align: center;
-            padding: 24px 18px;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 860px) {
-            .intro-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .nav-tab {
-                width: 100%;
-            }
-
-            .premium-badge {
-                width: 100%;
-                text-align: center;
-            }
-
-            .hero-overlay {
-                padding: 18px;
-            }
-
-            .note-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
+        .btn:hover, .btn:focus-visible { transform:translateY(-1px); box-shadow:0 14px 30px rgba(27,54,93,0.25); outline:none; }
+        .btn-secondary { background:linear-gradient(135deg, #2db7a1, #268e85); box-shadow:0 12px 26px rgba(38,142,133,0.24); }
+        .ai-box { background:linear-gradient(135deg, rgba(100,170,255,0.08), rgba(31,110,182,0.06)); border:1px solid rgba(99,179,237,0.28); border-radius:18px; padding:20px; margin-top:20px; }
+        .ai-title { color:var(--navy-3); font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+        .search-box { background:rgba(238,243,249,0.9); border:1px solid rgba(148,163,184,0.22); border-radius:16px; padding:14px; display:flex; gap:12px; margin-bottom:18px; }
+        .search-box input { flex:1; border:1px solid rgba(148,163,184,0.4); border-radius:12px; padding:12px 14px; font-size:0.96rem; background:#fff; }
+        .message-list { display:grid; gap:16px; }
+        .note-item { background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,249,255,0.98)); border:1px solid rgba(148,163,184,0.2); border-left:6px solid var(--danger); border-radius:16px; padding:18px 18px 14px; box-shadow:0 8px 18px rgba(15, 23, 42, 0.05); }
+        .note-header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; border-bottom:1px solid rgba(148,163,184,0.25); padding-bottom:8px; margin-bottom:10px; color:var(--navy-3); font-weight:800; }
+        .note-badge { background:rgba(99,179,237,0.12); color:var(--navy-2); border:1px solid rgba(99,179,237,0.2); border-radius:999px; font-weight:600; padding:5px 10px; font-size:0.8rem; }
+        .empty-state { display:none; background:rgba(245,247,251,0.9); border:1px dashed rgba(148,163,184,0.35); border-radius:14px; color:var(--muted); margin-top:14px; padding:20px; text-align:center; }
+        footer { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%); color:rgba(255,255,255,0.9); text-align:center; padding:24px 18px; font-size:0.95rem; }
+        @media (max-width: 860px) { .intro-grid { grid-template-columns:1fr; } }
+        @media (max-width: 640px) { .nav-tab { width:100%; } .premium-badge { width:100%; text-align:center; } .hero-overlay { padding:18px; } .note-header { flex-direction:column; align-items:flex-start; } }
     </style>
 </head>
 <body>
@@ -530,7 +142,7 @@
         <div id="page-anasayfa" class="page-content active" aria-hidden="false">
             <div class="section hero-card">
                 <div class="hero-image-wrap">
-                    <img class="school-image" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1400&q=80" alt="Buca Mehmet Akif Ersoy Sosyal Bilimler Lisesi okul binası">
+                    <img class="school-image" src="https://raw.githubusercontent.com/Mahir928/Buca-Mehmet-Akif-Ersoy-Sosyal-Bilimler-Lisesi/main/school-building.svg" alt="Buca Mehmet Akif Ersoy Sosyal Bilimler Lisesi okul binası">
                     <div class="hero-overlay">
                         <div class="hero-content">
                             <div class="eyebrow">Buca SBL</div>
@@ -551,7 +163,6 @@
                             <strong>- Mustafa Kemal Atatürk</strong>
                         </div>
                     </div>
-
                     <ul class="info-list">
                         <li><span class="icon">📚</span> Bilgi ve değer aktarımı</li>
                         <li><span class="icon">💡</span> Sorgulayan ve üretken nesiller</li>
@@ -565,7 +176,7 @@
         <div id="page-not-gonder" class="page-content" aria-hidden="true">
             <div class="section">
                 <h2>💌 Öğretmenine Özel Teşekkür / Kutlama Notu Gönder</h2>
-                <p style="margin-bottom: 20px; color: var(--muted);">Aşağıdaki formu doldurarak istediğin öğretmenine özel bir kutlama notu yazabilirsin. Notun anında okul panosunda görünür.</p>
+                <p style="margin-bottom:20px; color:var(--muted);">Aşağıdaki formu doldurarak istediğin öğretmenine özel bir kutlama notu yazabilirsin. Notun anında okul panosunda görünür.</p>
 
                 <div class="note-card">
                     <form id="noteForm" onsubmit="sendNote(event)">
@@ -573,7 +184,6 @@
                             <label for="studentInfo">Adınız / Sınıfınız (İsteğe Bağlı):</label>
                             <input type="text" id="studentInfo" placeholder="Örn: Zeynep - 11/A (İsterseniz 'Bir Öğrenciniz' yazabilirsiniz)">
                         </div>
-
                         <div class="form-group">
                             <label for="teacherSelect">Not Gönderilecek Öğretmen / Branş:</label>
                             <select id="teacherSelect" required>
@@ -588,12 +198,10 @@
                                 <option value="Okul Yönetimi">Okul Yönetimi & Rehberlik</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="noteText">Kutlama Notunuz:</label>
                             <textarea id="noteText" rows="5" required minlength="10" placeholder="Öğretmeninize iletmek istediğiniz güzel dilekleri veya anılarınızı buraya yazın..."></textarea>
                         </div>
-
                         <button type="submit" class="btn">Notu Panoya İlet ✉️</button>
                     </form>
                 </div>
@@ -604,9 +212,8 @@
             <div class="section">
                 <h2>🤖 Ne Yazacağını Bulamadın mı? Yapay Zeka Sana Not Hazırlasın!</h2>
                 <p>Hangi dersin öğretmenine veya zümreye not yazmak istiyorsan seç, senin için daha anlamlı ve özel bir kutlama metni hazırlayalım.</p>
-
-                <div style="margin-top: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-                    <select id="aiTeacherType" style="padding: 12px; border-radius: 12px; flex: 1; min-width: 220px; border: 1px solid rgba(148,163,184,0.5);">
+                <div style="margin-top:20px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                    <select id="aiTeacherType" style="padding:12px; border-radius:12px; flex:1; min-width:220px; border:1px solid rgba(148,163,184,0.5);">
                         <option value="Edebiyat">Edebiyat Öğretmeni İçin</option>
                         <option value="Tarih">Tarih Öğretmeni İçin</option>
                         <option value="Felsefe">Felsefe Öğretmeni İçin</option>
@@ -615,11 +222,10 @@
                     </select>
                     <button class="btn btn-secondary" type="button" onclick="generateNoteWithAI()">Not Önerisi Üret ✨</button>
                 </div>
-
-                <div class="ai-box" id="aiOutput" style="display: none;">
+                <div class="ai-box" id="aiOutput" style="display:none;">
                     <div class="ai-title">🤖 Yapay Zeka'nın Senin İçin Yazdığı Not:</div>
-                    <p id="aiNoteText" style="font-style: italic; color: var(--text); font-size: 1.04rem; line-height: 1.7;"></p>
-                    <button class="btn" type="button" onclick="copyAIToForm()" style="margin-top: 15px; padding: 10px 16px; font-size: 0.92rem;">Bu Notu Forma Aktar ve Gönder 📋</button>
+                    <p id="aiNoteText" style="font-style:italic; color:var(--text); font-size:1.04rem; line-height:1.7;"></p>
+                    <button class="btn" type="button" onclick="copyAIToForm()" style="margin-top:15px; padding:10px 16px; font-size:0.92rem;">Bu Notu Forma Aktar ve Gönder 📋</button>
                 </div>
             </div>
         </div>
@@ -627,41 +233,25 @@
         <div id="page-pano" class="page-content" aria-hidden="true">
             <div class="section">
                 <h2>📌 Öğretmenler Günü Dijital Panosu & Mesaj Arama</h2>
-                <p style="margin-bottom: 15px; color: var(--muted);">Öğrenciler tarafından paylaşılan tüm kutlama notları burada listelenir. Öğretmen, zümre veya isim arayabilirsiniz.</p>
-
+                <p style="margin-bottom:15px; color:var(--muted);">Öğrenciler tarafından paylaşılan tüm kutlama notları burada listelenir. Öğretmen, zümre veya isim arayabilirsiniz.</p>
                 <div class="search-box">
                     <input type="text" id="searchInput" onkeyup="filterNotes()" placeholder="🔍 Öğretmen, zümre, isim veya not içinde ara..." aria-label="Not ara">
                 </div>
-
                 <div class="message-list" id="boardList">
                     <div class="note-item">
-                        <div class="note-header">
-                            <span>Alıcı: Tüm Buca SBL Öğretmenleri</span>
-                            <span class="note-badge">Gönderen: 12/C Sınıfı</span>
-                        </div>
+                        <div class="note-header"><span>Alıcı: Tüm Buca SBL Öğretmenleri</span><span class="note-badge">Gönderen: 12/C Sınıfı</span></div>
                         <p>Bizlere sadece dersi değil, hayatı ve sorgulamayı öğreten tüm hocalarımızın Öğretmenler Günü kutlu olsun!</p>
                     </div>
-
                     <div class="note-item">
-                        <div class="note-header">
-                            <span>Alıcı: Edebiyat Zümresi</span>
-                            <span class="note-badge">Gönderen: Ahmet (10/B)</span>
-                        </div>
+                        <div class="note-header"><span>Alıcı: Edebiyat Zümresi</span><span class="note-badge">Gönderen: Ahmet (10/B)</span></div>
                         <p>Şiirleri ve edebiyatı bize sevdirdiğiniz, kelimelerin gücünü öğrettiğiniz için teşekkür ederiz hocalarım.</p>
                     </div>
-
                     <div class="note-item">
-                        <div class="note-header">
-                            <span>Alıcı: Tarih Zümresi</span>
-                            <span class="note-badge">Gönderen: Elif (11/A)</span>
-                        </div>
+                        <div class="note-header"><span>Alıcı: Tarih Zümresi</span><span class="note-badge">Gönderen: Elif (11/A)</span></div>
                         <p>Geçmişin ışığında geleceğe emin adımlarla yürümemizi sağlayan değerli Tarih öğretmenlerimize saygıyla teşekkür ederiz.</p>
                     </div>
                 </div>
-
-                <div id="emptyState" class="empty-state" aria-live="polite">
-                    Aramanızla eşleşen bir not bulunamadı.
-                </div>
+                <div id="emptyState" class="empty-state" aria-live="polite">Aramanızla eşleşen bir not bulunamadı.</div>
             </div>
         </div>
     </div>
@@ -672,7 +262,6 @@
 
     <script>
         const STORAGE_KEY = 'teacher-day-board-notes';
-
         function switchTab(tabId) {
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => {
@@ -681,14 +270,12 @@
                 page.setAttribute('aria-hidden', String(!isActive));
                 page.style.display = isActive ? 'block' : 'none';
             });
-
             const tabs = document.querySelectorAll('.nav-tab');
             tabs.forEach(tab => {
                 const isActive = tab.dataset.tab === tabId;
                 tab.classList.toggle('active', isActive);
                 tab.setAttribute('aria-selected', String(isActive));
             });
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -696,7 +283,6 @@
             const type = document.getElementById('aiTeacherType').value;
             const outputBox = document.getElementById('aiOutput');
             const outputText = document.getElementById('aiNoteText');
-
             const notes = {
                 'Edebiyat': 'Kelamın zarafetiyle ufkumuzu açan, her dizede bize yeni dünyalar tanıtan kıymetli Edebiyat öğretmenim; Öğretmenler Gününüz kutlu olsun!',
                 'Tarih': 'Geçmişin ışığında geleceğe emin adımlarla yürümemizi sağlayan, tarihi bize sevdiren değerli öğretmenim; Gününüz kutlu olsun!',
@@ -704,7 +290,6 @@
                 'Matematik': 'Hayatın karmaşık denklemlerinde bize rehberlik eden, her problemin bir çözümü olduğunu öğreten kıymetli öğretmenim; Öğretmenler Gününüz kutlu olsun!',
                 'Genel': 'Sosyal bilimlerin ışığında bizlere kattığınız her bir değer için sonsuz teşekkürler. Emeğiniz ödenmez!'
             };
-
             outputText.textContent = notes[type];
             outputBox.style.display = 'block';
         }
@@ -716,11 +301,8 @@
         }
 
         function getSavedNotes() {
-            try {
-                return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-            } catch (error) {
-                return [];
-            }
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+            catch (error) { return []; }
         }
 
         function saveBoardNotes(notes) {
@@ -731,61 +313,32 @@
             const board = document.getElementById('boardList');
             const noteItem = document.createElement('div');
             noteItem.className = 'note-item';
-
             const header = document.createElement('div');
             header.className = 'note-header';
-
             const recipient = document.createElement('span');
             recipient.textContent = `Alıcı: ${teacher}`;
-
             const sender = document.createElement('span');
             sender.className = 'note-badge';
             sender.textContent = `Gönderen: ${student}`;
-
             const message = document.createElement('p');
             message.textContent = text;
-
-            header.appendChild(recipient);
-            header.appendChild(sender);
-            noteItem.appendChild(header);
-            noteItem.appendChild(message);
-            board.prepend(noteItem);
-
-            if (shouldPersist) {
-                const notes = getSavedNotes();
-                notes.unshift({ teacher, student, text });
-                saveBoardNotes(notes);
-            }
+            header.appendChild(recipient); header.appendChild(sender); noteItem.appendChild(header); noteItem.appendChild(message); board.prepend(noteItem);
+            if (shouldPersist) { const notes = getSavedNotes(); notes.unshift({ teacher, student, text }); saveBoardNotes(notes); }
         }
 
         function restoreSavedNotes() {
             const savedNotes = getSavedNotes();
-            savedNotes.forEach(note => {
-                addNoteToBoard(note.teacher, note.student, note.text, false);
-            });
+            savedNotes.forEach(note => addNoteToBoard(note.teacher, note.student, note.text, false));
         }
 
         function sendNote(event) {
             event.preventDefault();
-
             const teacher = document.getElementById('teacherSelect').value;
             const text = document.getElementById('noteText').value.trim();
-
-            if (!teacher) {
-                alert('Lütfen bir öğretmen veya branş seçiniz.');
-                return;
-            }
-
-            if (text.length < 10) {
-                alert('Kutlama notu en az 10 karakter olmalıdır.');
-                return;
-            }
-
+            if (!teacher) { alert('Lütfen bir öğretmen veya branş seçiniz.'); return; }
+            if (text.length < 10) { alert('Kutlama notu en az 10 karakter olmalıdır.'); return; }
             let student = document.getElementById('studentInfo').value.trim();
-            if (!student) {
-                student = 'Bir Öğrenciniz';
-            }
-
+            if (!student) student = 'Bir Öğrenciniz';
             addNoteToBoard(teacher, student, text, true);
             document.getElementById('noteForm').reset();
             alert('Kutlama notunuz başarıyla panoya eklendi!');
@@ -797,23 +350,18 @@
             const noteItems = document.querySelectorAll('.note-item');
             const emptyState = document.getElementById('emptyState');
             let visibleCount = 0;
-
             noteItems.forEach(item => {
                 const content = item.textContent.toLowerCase();
                 const matches = content.includes(input);
                 item.style.display = matches ? '' : 'none';
                 if (matches) visibleCount++;
             });
-
             emptyState.style.display = input && visibleCount === 0 ? 'block' : 'none';
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             const tabs = document.querySelectorAll('.nav-tab');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => switchTab(tab.dataset.tab));
-            });
-
+            tabs.forEach(tab => tab.addEventListener('click', () => switchTab(tab.dataset.tab)));
             restoreSavedNotes();
             filterNotes();
         });
